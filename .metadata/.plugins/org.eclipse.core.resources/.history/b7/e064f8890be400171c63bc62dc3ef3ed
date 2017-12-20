@@ -1,0 +1,18 @@
+import java.util.*;
+public class TragaBolasUse {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		String color;
+		int maxBolas;
+		
+		
+		System.out.println("Introduce el color");
+		color=teclado.nextLine();
+		System.out.println("Intro mduce el maximo de bolas");
+		maxBolas=teclado.nextInt();
+		TragaBolas tella new TragaBolas(color,maxBolas);
+
+	}
+
+}

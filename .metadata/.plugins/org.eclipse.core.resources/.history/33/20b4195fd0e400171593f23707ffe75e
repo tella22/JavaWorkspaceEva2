@@ -1,0 +1,17 @@
+import java.util.*;
+public class TragaBolasUse {
+
+	public static void main(String[] args) {
+		TragaBolas hipo = new TragaBolas();
+		
+		System.out.println("Introduce el color");
+		hipo.setColor();
+		System.out.println("Introduce el maximo de bolas");
+		hipo.setmaxBolas();
+		
+		System.out.println(hipo.visualizar());
+
+		
+	}
+
+}

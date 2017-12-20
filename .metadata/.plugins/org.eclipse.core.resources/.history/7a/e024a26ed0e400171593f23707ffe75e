@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class TragaBolas {
+
+	private static String color;
+	private static int bolasComidas, maxBolas, comer, menu;
+	private boolean num;
+	Scanner teclado=new Scanner(System.in);
+
+	TragaBolas() {
+		color = "";
+		bolasComidas=0;
+		maxBolas=0;
+	}
+	TragaBolas(String color, int maxBolas){
+		this.color= color;
+		this.maxBolas=maxBolas;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor() {
+		color = teclado.nextLine();
+	}
+
+	public void setmaxBolas() {
+		//		try {
+		maxBolas = teclado.nextInt();
+		//		}catch (Exception error){
+		//			System.out.println("woooops");
+		//		}
+	}
+
+	public String visualizar() {
+		return "Datos:\n" + " Color: " + color + "\n" + " Bolas: " + maxBolas;
+	}
+
+	//	public String comer() {
+	//		comer = teclado.nextInt();
+	//		
+	//		
+	//		
+	//		return "He comido una bola";
+	//	}
+
+	public String menu() {
+		do {
+			System.out.println(" \n1: Crear tragaBolas.\n 2: Darle de comer.\n 3: Hacerle dormir.\n 4: Ver estado.\n 0: Fin.");
+			menu = teclado.nextInt();
+			switch(menu) {
+			
+			}
+		}while(menu!=0);
+		return "d";
+	}
+
+}

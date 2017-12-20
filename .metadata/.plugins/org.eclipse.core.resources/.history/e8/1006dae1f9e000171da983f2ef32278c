@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class horaUse {
+
+	public static void main(String[] args) throws InterruptedException {
+		Scanner teclado = new Scanner(System.in);
+		int cont;
+		int entrada
+		String entrada;
+		System.out.println("Introduce una hora");
+		int hora = teclado.nextInt();
+		System.out.println("Introduce un minuto");
+		int min = teclado.nextInt();
+		System.out.println("Introduce un segundo");
+		int sec = teclado.nextInt();
+		hora reloj =new hora(hora,min,sec);
+
+		for(cont=0; cont<(entrada); cont++) {
+			reloj.contaSegundos();
+		}
+		
+	}
+
+}

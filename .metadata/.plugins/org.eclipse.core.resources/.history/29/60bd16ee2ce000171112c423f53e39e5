@@ -1,0 +1,28 @@
+import java.util.*;
+public class indicadorUse {
+
+	public static void main(String[] args) {
+		Indicador coche;
+		coche = new Indicador();
+		int vel, num;
+		
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("introduce la velocidad");
+		vel=teclado.nextInt();
+		
+		coche.setVelocidad(vel);
+		
+		System.out.println(coche.total());
+		
+		System.out.println("1 para incrementar, 2 para disminuir");
+		num=teclado.nextInt();
+		if(num==1) {
+			coche.velocidadSuma();
+		}else if(num==2){
+			coche.velocidadResta();
+		}
+		
+		System.out.println(coche.total());
+	}
+
+}

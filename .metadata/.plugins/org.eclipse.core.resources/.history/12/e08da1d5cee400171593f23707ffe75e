@@ -1,0 +1,22 @@
+import java.util.*;
+public class TragaBolasUse {
+
+	public static void main(String[] args) {
+		Scanner teclado=new Scanner(System.in);
+		String color="";
+		int maxBolas = 0;
+		TragaBolas hipo = new TragaBolas();
+		
+		System.out.println("Introduce el color");
+		hipo.setColor();
+		System.out.println("Introduce el maximo de bolas");
+		hipo.setmaxBolas();
+		
+//		hipo.tragaBolas(color, maxBolas);
+		
+		System.out.println(hipo.visualizar());
+
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+
+public class horaUse {
+
+	public static void main(String[] args) {
+		
+		hora reloj =new hora();
+		int cont;
+		
+		for(cont=0; cont<60; cont++) {
+			reloj.contaSegundos();
+		}
+		
+	}
+
+}
