@@ -63,33 +63,33 @@ public class TragaBolas {
 			System.out.println("______________________");
 			System.out.println("\nEstoy trotando");
 			System.out.println("______________________");
-			
-			for(int i=0; i<10; i++) {
-				System.out.println(" ()  ");
-				System.out.println("/||\\/");
-				System.out.println("\\||");
-				System.out.println("_/\\");
-				System.out.println("  /");
-				
-				try {
-					TimeUnit.MILLISECONDS.sleep(250);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				
-				System.out.println("  ()  ");
-				System.out.println(" /||\\/");
-				System.out.println("/ ||_");
-				System.out.println("  | /");
-				System.out.println(" / ");
-				
-
-				try {
-					TimeUnit.MILLISECONDS.sleep(250);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
+//			
+//			for(int i=0; i<10; i++) {
+//				System.out.println(" ()  ");
+//				System.out.println("/||\\/");
+//				System.out.println("\\||");
+//				System.out.println("_/\\");
+//				System.out.println("  /");
+//				
+//				try {
+//					TimeUnit.MILLISECONDS.sleep(250);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//				
+//				System.out.println("  ()  ");
+//				System.out.println(" /||\\/");
+//				System.out.println("/ ||_");
+//				System.out.println("  | /");
+//				System.out.println(" / ");
+//				
+//
+//				try {
+//					TimeUnit.MILLISECONDS.sleep(250);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//			}
 		}
 	}
 }
