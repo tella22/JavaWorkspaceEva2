@@ -4,17 +4,17 @@ import org.omg.Messaging.SyncScopeHelper;
 
 public class GestionLibroAutor {
 	public static Autor vecAutor[] = new Autor[10];
+	private static Integer[] vec = new Integer[4];
+	private static Libro vecLibros[] = new Libro[10];
 
 	public static void main(String[] args) {
-
-		Libro vecLibros[] = new Libro[10];
 		vecAutor[0] = new Autor("Jose Antonio", "jantonio@gmail.com", 'm');
-		vecLibros[0] = new Libro("Las sepias de Manolo", 0, 1D, 2);
+//		vecLibros[0] = new Libro("Las sepias de Manolo", 0, 1D, 2);
 		
 		int librosCreados = 1;
-		int opcion, cantidad, i, libroCantidad, lugar;
+		int opcion, cantidad, i, libroCantidad, lugar, cantidadAutores=0, j=0, k,l;
 		Autor autor = new Autor();
-		Libro libro = new Libro();
+		Libro libro = null;
 		String autorName, autorEmail, autorGenero, libroTitulo, libroName;
 		Double libroPrecio;
 		char autorGeneroChar;
@@ -33,10 +33,22 @@ public class GestionLibroAutor {
 					cantidad = teclado.nextInt();
 				}
 				for (i = 0; i < cantidad; i++) {
-					establecerAutor(teclado, i);
+					System.out.println("¿Cuantos autores va a tener? (min=1, max=4)");
+					cantidadAutores = teclado.nextInt();
+					while (cantidadAutores > 4 || cantidadAutores < 1) {
+						System.out.println("¿Cuantos autores va a tener? (min=1, max=4)");
+						cantidadAutores = teclado.nextInt();
+					}
+					l=cantidadAutores+j;
+					j++;
+					for (; j<l; j++) {
+						establecerAutor(teclado, j);
+						
+					}
 					vecLibros[i] = establecerLibro(vecLibros, i, vecAutor[i], teclado);
 					librosCreados++;
 				}
+				
 				break;
 			case 2:
 				do {
@@ -59,7 +71,8 @@ public class GestionLibroAutor {
 				teclado.nextLine();
 				System.out.println("que nuevo titulo quieres introducir");
 				libroName = teclado.nextLine();
-				vecLibros[lugar] = new Libro(libroName, lugar, vecLibros[lugar].getPrecio(), vecLibros[lugar].getCantidad());
+//				vecLibros[lugar] = new Libro(libroName, vec, vecLibros[lugar].getPrecio(), vecLibros[lugar].getCantidad());
+				vecLibros[lugar] = new Libro(libroName, vec, vecLibros[lugar].getPrecio(), vecLibros[lugar].getCantidad());
 				break;
 			case 4:
 				for (i = 0; i < librosCreados; i++) {
@@ -94,7 +107,7 @@ public class GestionLibroAutor {
 			System.out.println("libro nº " + (i + 1) + " creado");
 			System.out.println("________________________________");
 		} while (libroCantidad < 0);
-		Libro libro = new Libro(libroTitulo, i, libroPrecio, libroCantidad);
+		Libro libro = new Libro(libroTitulo, vec, libroPrecio, libroCantidad);
 		return libro;
 	}
 
@@ -102,7 +115,9 @@ public class GestionLibroAutor {
 		String autorName;
 		String autorEmail;
 		String autorGenero;
+		Integer autorCont=0;
 		char autorGeneroChar;
+		Libro libro = null;
 		do {
 			teclado.nextLine();
 			System.out.println("introduce el nombre del autor");
@@ -118,30 +133,11 @@ public class GestionLibroAutor {
 			autorGeneroChar = autorGenero.charAt(0);
 		} while (autorGeneroChar != 'f' && autorGeneroChar != 'm');
 		Autor autor = new Autor(autorName, autorEmail, autorGeneroChar);
+		autorCont++;
 		vecAutor[posVecAutor] = autor;
-	}
-	// public static Autor establecerAutor(Scanner teclado) {
-	// String autorName;
-	// String autorEmail;
-	// String autorGenero;
-	// char autorGeneroChar;
-	// do{
-	// teclado.nextLine();
-	// System.out.println("introduce el nombre del autor");
-	// autorName=teclado.nextLine();
-	// }while(autorName.length()<1);
-	// do {
-	// System.out.println("introduce el email del autor");
-	// autorEmail=teclado.nextLine();
-	// }while(autorEmail.length()<1);
-	// do {
-	// System.out.println("introduce el genero del autor");
-	// autorGenero=teclado.nextLine();
-	// autorGeneroChar=autorGenero.charAt(0);
-	// }while(autorGeneroChar!='f' && autorGeneroChar!='m');
-	// Autor autor = new Autor(autorName,autorEmail,autorGeneroChar);
-	// return autor;
-	// }
+		vec[posVecAutor]=autorCont;
+		
+		}
 
 	public static void mostrarMenu() {
 		System.out.println("1. Crear libros");

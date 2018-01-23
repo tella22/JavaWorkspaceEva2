@@ -7,4 +7,6 @@
 <fullyQualifiedTypeName name="calculadora.Calculadora"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="org.omg.Messaging.SyncScopeHelper"/>
+<fullyQualifiedTypeName name="Autor"/>
+<fullyQualifiedTypeName name="GestionLibroAutor"/>
 </qualifiedTypeNameHistroy>
