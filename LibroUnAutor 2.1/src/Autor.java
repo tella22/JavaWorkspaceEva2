@@ -30,17 +30,16 @@ public class Autor {
 		return email;
 	}
 	
-	public void setEmail() {
-		
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	public Character getGenero(){
 		return genero;
 	}
 	
-	public static String cadenaAutor(Integer posicion){
-		return "Autor[nombre = " + vecAutor[posicion].getNombre()+ ", email = " 
-	+ vecAutor[posicion].getEmail() + ", genero = " + vecAutor[posicion].getGenero() + "]";
+	public String cadenaAutor(){
+		return "Autor[nombre = " + nombre + ", email = " + email + ", genero = "+ genero + "]";
 	}
 	
 	public static Integer totalAutores() {

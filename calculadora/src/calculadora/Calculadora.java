@@ -14,8 +14,20 @@ public class Calculadora {
 	}
 
 	public int resta() {
-		int resul = num1 - num2;
-		return resul;
+		int result;
+		if (resta2())
+			result = num1 - num2;
+		else
+			result = num2 - num1;
+		return result;
+	}
+	
+	public boolean resta2() {
+		if (num1 >= num2) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	public int multiplica() {
@@ -26,6 +38,13 @@ public class Calculadora {
 	public int divide() {
 		int resul = num1 / num2;
 		return resul;
+	}
+	
+	public Integer divide2() {
+		if (num2 == 0)
+			return null;
+		int result = num1 / num2;
+		return result;
 	}
 
 }
