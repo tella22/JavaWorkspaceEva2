@@ -8,8 +8,8 @@ public class Autor {
 		this.nombre=nombre;
 		this.email=email;
 		this.genero=genero;
-		GestionLibroAutor.vecAutor[GestionLibroAutor.lista] = this;
-		GestionLibroAutor.lista++;
+		GestionLibroAutor.vecAutor[GestionLibroAutor.listaAutores] = this;
+		GestionLibroAutor.listaAutores++;
 	}
 	
 	Autor(Integer posicion, String nombre, String email, Character genero){
@@ -40,7 +40,7 @@ public class Autor {
 	}
 	
 	public static Integer totalAutores() {
-		return GestionLibroAutor.lista;
+		return GestionLibroAutor.listaAutores;
 	}
 	
 	public static Autor getVecAutor(Integer posicion) {

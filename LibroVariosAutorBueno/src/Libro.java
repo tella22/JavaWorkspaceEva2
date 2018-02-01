@@ -2,7 +2,6 @@
 public class Libro {
 	
 	private String titulo;
-	private Autor autor;
 	private Double precio;
 	private Integer cantidad;
 	private Integer autores[];
@@ -11,8 +10,7 @@ public class Libro {
 		this.titulo=titulo;
 		this.autores=autores;
 		this.precio=precio;
-		GestionLibroAutor.vecLibros[GestionLibroAutor.lista] = this;
-		GestionLibroAutor.lista++;
+		GestionLibroAutor.listaLibros++;
 	}
 
 	public Libro(String titulo, Integer autores[], Double precio, Integer cantidad) {
@@ -20,6 +18,7 @@ public class Libro {
 		this.autores = autores;
 		this.precio = precio;
 		this.cantidad = cantidad;
+		GestionLibroAutor.listaLibros++;
 	}
 	
 //	public Libro(String titulo, Autor autor, Double precio, Integer cantidad, Autor[] posicionAutor) {
@@ -30,9 +29,12 @@ public class Libro {
 //	}
 
 	public String cadenaLibro() {
-		String cadena = "Libro [titulo = " + titulo + ", " + "Autor [nombre = " + autor.getNombre() + ", email = "
-				+ autor.getEmail() + ", genero = " + autor.getGenero() + "] " + "precio = " + precio + " cantidad = "
-				+ cantidad + "]";
+		String cadena = "\tLibro [titulo = " + titulo + ", \n\t\tAutores:[\n";
+		for(int i=0; i<autores.length; i++) {
+			cadena+="\t\t\t"+GestionLibroAutor.vecAutor[autores[i].intValue()].cadenaAutor();
+			cadena+="\n";
+		}
+		cadena+="\t\tprecio = " + precio + " cantidad = " + cantidad + "]";
 		return cadena;
 	}
 
