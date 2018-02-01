@@ -1,15 +1,18 @@
 
 public class Libro {
+	private static Autor[] vecAutoresLibros = new Autor[100];
+	
 	private String titulo;
 	private Autor autor;
 	private Double precio;
 	private Integer cantidad;
 
 	public Libro(String titulo, Autor autor, Double precio) {
-		this.titulo = titulo;
-		this.autor = autor;
-		this.precio = precio;
-		cantidad = 0;
+		this.titulo=titulo;
+		this.autor=autor;
+		this.precio=precio;
+		GestionLibroAutor.vecLibros[GestionLibroAutor.lista] = this;
+		GestionLibroAutor.lista++;
 	}
 
 	public Libro(String titulo, Autor autor, Double precio, Integer cantidad) {
@@ -20,8 +23,8 @@ public class Libro {
 	}
 
 	public String cadenaLibro() {
-		String cadena = "Libro [titulo = " + titulo + ",\n" + "Autor [nombre = " + autor.getNombre() + ", email = "
-				+ autor.getEmail() + ", genero = " + autor.getGenero() + "]\n" + "precio = " + precio + " cantidad = "
+		String cadena = "Libro [titulo = " + titulo + ", " + "Autor [nombre = " + autor.getNombre() + ", email = "
+				+ autor.getEmail() + ", genero = " + autor.getGenero() + "] " + "precio = " + precio + " cantidad = "
 				+ cantidad + "]";
 		return cadena;
 	}
@@ -46,8 +49,8 @@ public class Libro {
 		return titulo;
 	}
 
-	public Autor getAutor() {
-		return autor;
+	public Autor getAutor(Integer posicion) {
+		return GestionLibroAutor.vecAutor[posicion];
 	}
 
 }// Libro

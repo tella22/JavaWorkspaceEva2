@@ -4,16 +4,17 @@ import org.omg.Messaging.SyncScopeHelper;
 
 public class GestionLibroAutor {
 	
+	public static Autor[] vecAutor = new Autor[100];
+	public static Libro[] vecLibros = new Libro[100];
+	public static Integer lista=0;
+	
 	public static void main(String[] args) {
 		
-		Autor[] vecAutor = null;
-		Libro[] vecLibros = null;
 		Scanner teclado = new Scanner(System.in);
-		Integer opcion, listaAutor, cantidad;
-		String nombreAutor;
+		Integer opcion, listaAutor, cantidad, listaLibro, setCantidad;
+		String nombreAutor, emailMod;
 		Integer posicion = 0;
-		Autor autor=null;
-		Libro libro = null;
+		Double setPrecio;
 		
 		do {
 			mostrarMenu();
@@ -33,21 +34,31 @@ public class GestionLibroAutor {
 				do {
 					listaAutor=Leer.pedirEntero("¿Que autor quieres modificar?");
 				}while(listaAutor>Autor.totalAutores());
-				autor.setEmail(Leer.pedirCadena("Introduce el email modificado"));
+				listaAutor--;
+				Autor autor= vecAutor[listaAutor];
+				emailMod=Leer.pedirCadena("Introduce el email modificado");
+				autor.setEmail(emailMod);
 				break;
 			case 3:
+				mostrarLibros(vecLibros);
 				do {
-					listaAutor=Leer.pedirEntero("¿Que libro quieres modificar?");
-				}while(listaAutor>Autor.totalAutores());
-				libro.setPrecio(Leer.pedirDouble("Introduce el precio del libro modificado"));
-				libro.setCantidad(Leer.pedirEntero("Introduce la cantidad del libro modificado"));
+					listaLibro=Leer.pedirEntero("¿Que libro quieres modificar?");
+				}while(listaLibro>Autor.totalAutores());
+				listaLibro--;
+				Libro libro = vecLibros[listaLibro];
+				setPrecio=Leer.pedirDouble("Introduce el precio del libro modificado");
+				libro.setPrecio(setPrecio);
+				setCantidad=Leer.pedirEntero("Introduce la cantidad del libro modificado");
+				libro.setCantidad(setCantidad);
 				break;
 			case 4:
-				
+				for (posicion = 0; posicion < Autor.totalAutores(); posicion++) {
+					System.out.println("posicion " + (posicion+1) +": "+ vecLibros[posicion].cadenaLibro());
+				}
 				break;
 			case 5:
 				for (posicion = 0; posicion < Autor.totalAutores(); posicion++) {
-					System.out.println("posicion " + (posicion+1) +": "+ autor.cadenaAutor());
+					System.out.println("posicion " + (posicion+1) +": "+ vecAutor[posicion].cadenaAutor());
 				}
 				break;
 			}
@@ -78,12 +89,20 @@ public class GestionLibroAutor {
 	
 	public static void mostrarAutores(Autor[] vecAutor) {
 		int i;
-		System.out.println("Libros");
+		System.out.println("Autores");
 		System.out.println("____________");
 		for(i=0; i< vecAutor.length && vecAutor[i] != null ; i++) {
-			System.out.println((i)+ ". " + vecAutor[i].cadenaAutor());
+			System.out.println((i+1)+ ". " + vecAutor[i].cadenaAutor());
 		}
-		
+	}
+	
+	public static void mostrarLibros(Libro[] vecLibro) {
+		int i;
+		System.out.println("Libros");
+		System.out.println("____________");
+		for(i=0; i< vecLibro.length && vecLibro[i] != null ; i++) {
+			System.out.println((i+1)+ ". " + vecLibro[i].cadenaLibro());
+		}
 	}
 	
 	public static void crearLibros(Libro[] vecLibros, Autor[] vecAutor) {
@@ -103,7 +122,6 @@ public class GestionLibroAutor {
 			genero = Leer.pedirCadena("genero del autor?");
 			generoChar=genero.charAt(0);
 			autor = new Autor(nombreAutor, email, generoChar);
-			vecAutor[indLibro] = new Autor(nombreAutor, email, generoChar);
 			vecLibros[indLibro] = new Libro(titulo, autor, precio, cantidad);
 			}
 		} 

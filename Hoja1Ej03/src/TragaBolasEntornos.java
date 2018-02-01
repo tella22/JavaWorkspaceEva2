@@ -1,17 +1,23 @@
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class TragaBolas {
+public class TragaBolasEntornos {
 
 	private static String color;
 	private static int bolasComidas, maxBolas, comer, menu;
 	private boolean num;
 	Scanner teclado=new Scanner(System.in);
 
-	TragaBolas() {
+	TragaBolasEntornos() {
 		color = "";
 		bolasComidas=0;
 		maxBolas=0;
+	}
+	
+	TragaBolasEntornos(String color, Integer bolasComidas, Integer maxBolas) {
+		this.color = color;
+		this.bolasComidas=bolasComidas;
+		this.maxBolas=maxBolas;
 	}
 
 	public void setColor() {
@@ -31,16 +37,12 @@ public class TragaBolas {
 		return "\n Datos:\n" + " Color: " + color + "\n" + " Bolas: " + maxBolas + "\n" + " bolas comidas " + bolasComidas;
 	}
 
-	public void comer() {	
+	public String comer() {	
 		if(bolasComidas<maxBolas) {
 			bolasComidas++;
-			System.out.println("__________________");
-			System.out.println("\nHe comido una bola");
-			System.out.println("__________________");
+			return "__________________\nHe comido una bola\n__________________";
 		}else {
-			System.out.println("_______________________________________________");
-			System.out.println("\nlimite de bolas alcanzado, no puede comer más");
-			System.out.println("_______________________________________________");
+			return "_______________________________________________\nlimite de bolas alcanzado, no puede comer más\n_______________________________________________";
 		}
 	}
 	
