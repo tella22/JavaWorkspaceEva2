@@ -3,8 +3,6 @@ public class Maquinista extends Empleado{
 	private Integer numMaquina;
 	private Integer anios;
 
-
-
 	public Maquinista(String nombre, Integer edad, Integer numMaquina, Integer anios) {
 		super(nombre, edad);
 		this.numMaquina = numMaquina;
@@ -29,6 +27,6 @@ public class Maquinista extends Empleado{
 
 	public void visualizarTodosDatos(){
 		super.visualizarTodosDatos();
-		Leer.mostrarEnPantalla("Maquina numero: " + numMaquina + "\tAntigüedad: " + anios);
+		Leer.mostrarEnPantalla("Maquina numero " + numMaquina + "\tAntigüedad " + anios);
 	}
 }

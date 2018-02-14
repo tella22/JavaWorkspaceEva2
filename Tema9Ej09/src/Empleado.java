@@ -1,10 +1,8 @@
 
 public class Empleado {
-	private  String nombre;
+	private String nombre;
 	private static Integer sueldobase = 1000;
 	private Integer edad;
-	
-	
 
 	public Empleado(String nombre, Integer edad) {
 		this.nombre = nombre;
@@ -27,10 +25,14 @@ public class Empleado {
 		Empleado.sueldobase = sueldobase;
 	}
 	
+	public Integer getEdad() {
+		return edad;
+	}
+	
 	public void visualizarTodosDatos(){
 		Leer.mostrarEnPantalla("" + getClass());
-		Leer.mostrarEnPantalla("Nombre: " + nombre + "\tSueldo base" + sueldobase);
-		Leer.mostrarEnPantalla("Edad: " + edad );
+		Leer.mostrarEnPantalla("Nombre " + nombre + "\tSueldo base " + sueldobase);
+		Leer.mostrarEnPantalla("Edad " + edad );
 	}
 	
 }

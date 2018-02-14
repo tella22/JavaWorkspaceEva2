@@ -3,8 +3,6 @@ public class Administrativo extends Empleado{
 	private String estudios;
 	private Integer numOrdenador;
 
-	
-
 	public Administrativo(String nombre, Integer edad, String estudios, Integer numOrdenador) {
 		super(nombre, edad);
 		this.estudios = estudios; 
@@ -30,7 +28,7 @@ public class Administrativo extends Empleado{
 	public void visualizarTodosDatos(){
 		super.visualizarTodosDatos();
 		//Leer.mostrarEnPantalla("" + getClass());
-		Leer.mostrarEnPantalla("Estudios: " + estudios + "\tOrdenador num: " + numOrdenador);
+		Leer.mostrarEnPantalla("Estudios " + estudios + "\tOrdenador num " + numOrdenador);
 	}
 
 }
