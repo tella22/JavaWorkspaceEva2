@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
-<fullyQualifiedTypeName name="Estaticos"/>
-<fullyQualifiedTypeName name="cuentaCorriente2.CuentaCorriente2"/>
-<fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="calculadora.Calculadora"/>
-<fullyQualifiedTypeName name="org.omg.Messaging.SyncScopeHelper"/>
-<fullyQualifiedTypeName name="Autor"/>
-<fullyQualifiedTypeName name="GestionLibroAutor"/>
 <fullyQualifiedTypeName name="Leer"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="utilidades.Leer"/>
-<fullyQualifiedTypeName name="visibilidad1.Empleado"/>
-<fullyQualifiedTypeName name="visibilidad1.Leer"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
